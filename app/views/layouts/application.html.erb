@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmarkapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-primary bg-primary">
+    <center>
+    <% if user_signed_in? %>
+      <%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "text-white bg-primary", class: "btn btn-success" %>
+      <%= link_to 'New Bookmark', new_bookmark_path, class: "text-white bg-primary", class: "btn btn-success" %>
+      <%= link_to 'Settings', edit_user_registration_path, class: "text-white bg-primary", class: "btn btn-success" %>
+    <% else %>
+      <%= link_to 'Sign in', new_user_session_path, class: "text-white bg-primary", class: "btn btn-success" %>
+      <%= link_to 'Sign up', new_user_registration_path, class: "text-white bg-primary", class: "btn btn-success" %>
+    <% end %>
+    </center>
+
+    </nav>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  </body>
+  <%= yield %>
+</html>

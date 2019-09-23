@@ -1,0 +1,24 @@
+  <table class="table table-hover" width="10%"><br>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Url</th>
+        <th>Description</th>
+        <th>Favorite</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= @bookmark.title %></td>
+          <td><%= @bookmark.url %></td>
+          <td><%= @bookmark.description %></td>
+          <td><%= @bookmark.favorite %></td>
+        </tr>
+    </tbody>
+  </table>
+
+<center>
+  <%= link_to 'Edit', edit_bookmark_path(@bookmark), class: "btn btn-success" %> |
+  <%= link_to 'Back', bookmarks_path, class: "btn btn-success" %>
+</center>
